@@ -17,7 +17,7 @@ export default function CommentForm({ productId, onSubmit }: Props) {
   };
 
   return (
-    <form className='comment-form' onSubmit={handleSubmit}>
+    <form className="comment-form" onSubmit={handleSubmit}>
       <input value={text} onChange={(e) => setText(e.target.value)} placeholder="Write comment" />
       <button type="submit">Add</button>
     </form>
