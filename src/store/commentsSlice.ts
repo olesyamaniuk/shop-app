@@ -67,14 +67,64 @@
 
 // export default slice.reducer;
 
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-type Comment = {
-  id: number
-  productId: number
-  description: string
-  date: string
-}
+
+
+// import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+
+// type Comment = {
+//   id: number
+//   productId: number
+//   description: string
+//   date: string
+// }
+
+// const STORAGE_KEY = 'comments'
+
+// const fetchCommentsFromStorage = (): Comment[] => {
+//   const data = localStorage.getItem(STORAGE_KEY)
+//   return data ? JSON.parse(data) : []
+// }
+
+// const saveCommentsToStorage = (comments: Comment[]) => {
+//   localStorage.setItem(STORAGE_KEY, JSON.stringify(comments))
+// }
+
+// type CommentsState = {
+//   items: Comment[]
+// }
+
+// const initialState: CommentsState = {
+//   items: fetchCommentsFromStorage()
+// }
+
+// const commentsSlice = createSlice({
+//   name: 'comments',
+//   initialState,
+//   reducers: {
+//     fetchComments: (state, action: PayloadAction<number>) => {
+//       // Встановлюємо тільки коментарі для productId
+//       state.items = fetchCommentsFromStorage().filter(c => c.productId === action.payload)
+//     },
+//     addComment: (state, action: PayloadAction<Comment>) => {
+//       state.items.push(action.payload)
+//       const allComments = fetchCommentsFromStorage()
+//       saveCommentsToStorage([...allComments, action.payload])
+//     },
+//     deleteComment: (state, action: PayloadAction<number>) => {
+//       state.items = state.items.filter(c => c.id !== action.payload)
+//       const allComments = fetchCommentsFromStorage().filter(c => c.id !== action.payload)
+//       saveCommentsToStorage(allComments)
+//     }
+//   }
+// })
+
+// export const { fetchComments, addComment, deleteComment } = commentsSlice.actions
+// export default commentsSlice.reducer
+
+
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { Comment } from '../types'
 
 const STORAGE_KEY = 'comments'
 
@@ -99,22 +149,16 @@ const commentsSlice = createSlice({
   name: 'comments',
   initialState,
   reducers: {
-    fetchComments: (state, action: PayloadAction<number>) => {
-      // Встановлюємо тільки коментарі для productId
-      state.items = fetchCommentsFromStorage().filter(c => c.productId === action.payload)
-    },
     addComment: (state, action: PayloadAction<Comment>) => {
       state.items.push(action.payload)
-      const allComments = fetchCommentsFromStorage()
-      saveCommentsToStorage([...allComments, action.payload])
+      saveCommentsToStorage(state.items)
     },
     deleteComment: (state, action: PayloadAction<number>) => {
       state.items = state.items.filter(c => c.id !== action.payload)
-      const allComments = fetchCommentsFromStorage().filter(c => c.id !== action.payload)
-      saveCommentsToStorage(allComments)
+      saveCommentsToStorage(state.items)
     }
   }
 })
 
-export const { fetchComments, addComment, deleteComment } = commentsSlice.actions
+export const { addComment, deleteComment } = commentsSlice.actions
 export default commentsSlice.reducer
