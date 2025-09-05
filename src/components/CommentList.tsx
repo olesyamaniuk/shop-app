@@ -1,19 +1,19 @@
-import { Comment } from '../types'
-
+import { Comment } from '../types';
+import '../styles/globals.css';
 type Props = {
-  comments: Comment[]
-  onDelete: (id: number) => void
-}
+  comments: Comment[];
+  onDelete: (id: number) => void;
+};
 
 export default function CommentList({ comments, onDelete }: Props) {
   return (
-    <ul>
+    <ul className='comment-list'>
       {comments.map((c) => (
-        <li key={c.id}>
+        <li className='comment-item' key={c.id}>
           <span>{c.description}</span>
-          <button onClick={() => onDelete(c.id)}>x</button>
+          <button className='btn-delete' onClick={() => onDelete(c.id)}>x</button>
         </li>
       ))}
     </ul>
-  )
+  );
 }

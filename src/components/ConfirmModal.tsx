@@ -1,17 +1,25 @@
+import '../styles/modal.css';
+
 type Props = {
-  message: string
-  onConfirm: () => void
-  onCancel: () => void
-}
+  message: string;
+  onConfirm: () => void;
+  onCancel: () => void;
+};
 
 export default function ConfirmModal({ message, onConfirm, onCancel }: Props) {
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <p>{message}</p>
-        <button onClick={onConfirm}>Yes</button>
-        <button onClick={onCancel}>No</button>
+    <div className="modal-overlay">
+      <div className="modal">
+        <h4>{message}</h4>
+        <div className="modal-confirm ">
+          <button className="btn-confirm" onClick={onConfirm}>
+            Yes
+          </button>
+          <button className="btn-cancel" onClick={onCancel}>
+            No
+          </button>
+        </div>
       </div>
     </div>
-  )
+  );
 }

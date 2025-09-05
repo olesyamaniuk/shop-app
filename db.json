@@ -9,7 +9,9 @@
         "width": 71,
         "height": 151
       },
-      "weight": "200g"
+      "weight": "200g",
+      "width": 71,
+      "height": 151
     },
     {
       "id": 2,
@@ -21,19 +23,6 @@
         "height": 200
       },
       "weight": "350g"
-    },
-    {
-      "name": "fgqwdq",
-      "imageUrl": "https://picsum.photos/seed/alpha/400/240",
-      "count": 196,
-      "width": 20,
-      "height": 20,
-      "weight": "22",
-      "size": {
-        "width": 20,
-        "height": 20
-      },
-      "id": 3
     }
   ],
   "comments": [
@@ -50,10 +39,16 @@
       "date": "18:15 05.09.2025"
     },
     {
-      "productId": 3,
-      "description": "ІФАВІПВПАР",
-      "date": "05.09.2025, 13:15:30",
-      "id": 3
+      "productId": 1,
+      "description": "good",
+      "date": "05.09.2025, 15:02:00",
+      "id": 6
+    },
+    {
+      "productId": 2,
+      "description": "bad",
+      "date": "05.09.2025, 15:02:23",
+      "id": 7
     }
   ]
 }

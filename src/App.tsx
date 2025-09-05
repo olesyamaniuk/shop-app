@@ -1,7 +1,7 @@
-import { Route, Routes, Navigate } from 'react-router-dom'
-import ProductListPage from './pages/ProductListPage'
-import ProductDetailPage from './pages/ProductDetailPage'
-import Header from './components/Header'
+import { Route, Routes, Navigate } from 'react-router-dom';
+import ProductListPage from './pages/ProductListPage';
+import ProductDetailPage from './pages/ProductDetailPage';
+import Header from './components/Header';
 
 export default function App() {
   return (
@@ -16,5 +16,5 @@ export default function App() {
         </Routes>
       </main>
     </div>
-  )
+  );
 }

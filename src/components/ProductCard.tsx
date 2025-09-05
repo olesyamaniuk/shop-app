@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom'
-import { Product } from '../types'
-// import '../styles/ProductCard.css'
+import { Link } from 'react-router-dom';
+import { Product } from '../types';
+import '../styles/globals.css';
 
 type Props = {
-  product: Product
-  onDelete: () => void
-}
+  product: Product;
+  onDelete: () => void;
+};
 
 export default function ProductCard({ product, onDelete }: Props) {
   return (
@@ -17,5 +17,5 @@ export default function ProductCard({ product, onDelete }: Props) {
       <p>Count: {product.count}</p>
       <button onClick={onDelete}>Delete</button>
     </div>
-  )
+  );
 }
