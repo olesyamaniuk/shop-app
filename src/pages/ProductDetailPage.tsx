@@ -6,7 +6,7 @@ import ProductFormModal from '../components/ProductFormModal';
 import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
 import { addComment, deleteComment } from '../store/commentsSlice';
-
+import '../styles/globals.css';
 export default function ProductDetailPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ export default function ProductDetailPage() {
   const productComments = comments.filter((c) => c.productId === selectedProduct.id);
 
   return (
-    <div className="product-detail-page">
+    <div className="product-detail-page section">
       <button onClick={() => navigate(-1)}>← Back</button>
       <h1>{selectedProduct.name}</h1>
       <img src={selectedProduct.imageUrl} alt={selectedProduct.name} className="detail-img" />

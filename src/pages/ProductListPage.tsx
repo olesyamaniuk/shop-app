@@ -4,7 +4,7 @@ import { addProduct, deleteProduct, setSort } from '../store/productsSlice';
 import ProductCard from '../components/ProductCard';
 import ProductFormModal from '../components/ProductFormModal';
 import { Product } from '../types';
-
+import '../styles/globals.css';
 export default function ProductListPage() {
   const dispatch = useAppDispatch();
   const { products, sort } = useAppSelector((s) => s.products);
@@ -24,7 +24,7 @@ export default function ProductListPage() {
   };
 
   return (
-    <div className="product-list-page">
+    <div className="product-list-page section">
       <header className="list-header">
         <h1>Products</h1>
         <div className="actions">

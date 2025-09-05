@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Product } from '../types';
 import '../styles/globals.css';
-
+import '../styles/modal.css';
 type Props = {
   product: Product;
   onDelete: () => void;
